@@ -9,10 +9,15 @@ $router = new Router();
 $router->setRoutes([
     'GET' => [
         'details' => ['DetailsController', 'details'],
+        'signup' => ['AuthController', 'signup'],
+        'signin' => ['AuthController', 'login'],
     ],
     'POST' => [
-        'submit' => ['DetailsController', 'save']
-    ]
+        'submit' => ['DetailsController', 'save'],
+        'details' => ['CommentsController', 'saveComment'],
+        'signup' => ['AuthController', 'registerUser'],
+        'signin' => ['AuthController', 'authenticateUser'],
+        ],
 ]);
 
 if (isset($_GET['url'])) {
